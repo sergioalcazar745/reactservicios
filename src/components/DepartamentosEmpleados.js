@@ -16,7 +16,6 @@ export default class DepartamentosEmpleados extends Component {
     cargarEmpleados = (e) => {
         e.preventDefault();
         var request = Global.urlEmpleados + "api/Empleados/EmpleadosDepartamento/" + this.selectDepartamentoRef.current.value;
-        console.log(request)
         var auxEmpleados = [];
 
         axios.get(request).then(response => {
