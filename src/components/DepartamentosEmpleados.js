@@ -6,7 +6,7 @@ export default class DepartamentosEmpleados extends Component {
 
     state = {
         departamentos: [],
-        statusDepartamentos: false, 
+        statusDepartamentos: false,
         empleados: [],
         statusEmpleados: false
     }
@@ -26,7 +26,7 @@ export default class DepartamentosEmpleados extends Component {
                         <li>{empleado.oficio}</li>
                         <li>{empleado.salario}</li>
                         <li>{empleado.departamento}</li>
-                        <hr/>
+                        <hr />
                     </div>
                 );
             }
@@ -42,7 +42,7 @@ export default class DepartamentosEmpleados extends Component {
         var options = [];
 
         axios.get(request).then(response => {
-            for (var departamento of response.data){
+            for (var departamento of response.data) {
                 options.push(<option key={departamento.Numero} value={departamento.Numero}>{departamento.Nombre}</option>)
             }
             this.setState({
@@ -67,12 +67,12 @@ export default class DepartamentosEmpleados extends Component {
                             this.state.departamentos
                         }
                     </select>
-                    <ul>
-                        {
-                            this.state.empleados
-                        }
-                    </ul>
                 </form>
+                <ul>
+                    {
+                        this.state.empleados
+                    }
+                </ul>
             </div>
         )
     }
